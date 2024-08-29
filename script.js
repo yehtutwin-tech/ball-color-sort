@@ -1,3 +1,25 @@
+const pickAudio = new Audio('pick.mp3');
+const dropAudio = new Audio('drop.mp3');
+const completeAudio = new Audio('complete.mp3');
+
+function playPickAudio() {
+  pickAudio.pause();
+  pickAudio.currentTime = 0;
+  pickAudio.play(); 
+}
+
+function playDropAudio() {
+  dropAudio.pause();
+  dropAudio.currentTime = 0;
+  dropAudio.play();
+}
+
+function playCompleteAudio() {
+  completeAudio.pause();
+  completeAudio.currentTime = 0;
+  completeAudio.play();
+}
+
 const container = document.querySelector('.container');
 const colors = ['red', 'green', 'blue'];
 const ballsInTube = 8;
@@ -61,6 +83,7 @@ function tubeClick(tc, tube) {
       alert('The tube is full!');
     }
     else {
+      playDropAudio();
       const shiftItem = bArr[tcPicked].shift();
       shiftItem.classList.remove('ball-float');
       bArr[tc].unshift(shiftItem);
@@ -72,6 +95,7 @@ function tubeClick(tc, tube) {
   }
   else {
     if (tube.firstChild) {
+      playPickAudio();
       tube.firstChild.classList.add('ball-float');
       isPicked = true;
       tcPicked = tc;
@@ -108,6 +132,7 @@ function checkResult() {
     tubeGreenLength === ballsInTube &&
     tubeBlueLength === ballsInTube
   ) {
+    playCompleteAudio();
     alert('Yeah! you win!!!');
   }
 }
