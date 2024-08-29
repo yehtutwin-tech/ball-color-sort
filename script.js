@@ -57,7 +57,10 @@ function shuffleArray(array) {
 
 function tubeClick(tc, tube) {
   if (isPicked) {
-    if (tube.childNodes.length < 12) {
+    if (tcPicked !== tc && tube.childNodes.length === 12) {
+      alert('The tube is full!');
+    }
+    else {
       const shiftItem = bArr[tcPicked].shift();
       shiftItem.classList.remove('ball-float');
       bArr[tc].unshift(shiftItem);
@@ -66,14 +69,13 @@ function tubeClick(tc, tube) {
       isPicked = false;
       tcPicked = null;
     }
-    else {
-      alert('The tube is full!');
-    }
   }
   else {
-    tube.firstChild.classList.add('ball-float');
-    isPicked = true;
-    tcPicked = tc;
+    if (tube.firstChild) {
+      tube.firstChild.classList.add('ball-float');
+      isPicked = true;
+      tcPicked = tc;
+    }
   }
 }
 

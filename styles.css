@@ -19,6 +19,8 @@
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 /* .tube-red {
   border-color: red;
@@ -33,20 +35,23 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border-style: solid;
-  border-width: 2px;
+  /* border-style: solid; */
+  /* border-width: 2px; */
 }
 .ball-red {
-  background-color: lightcoral;
-  border-color: red;
+  /* background-color: lightcoral; */
+  /* border-color: red; */
+  background: radial-gradient(circle, red 30%, darkred 70%);
 }
 .ball-green {
-  background-color: lightgreen;
-  border-color: green;
+  /* background-color: lightgreen; */
+  /* border-color: green; */
+  background: radial-gradient(circle, green 30%, darkgreen 70%);
 }
 .ball-blue {
-  background-color: lightskyblue;
-  border-color: blue;
+  /* background-color: lightskyblue; */
+  /* border-color: blue; */
+  background: radial-gradient(circle, blue 30%, darkblue 70%);
 }
 .ball-float {
   position: absolute;
