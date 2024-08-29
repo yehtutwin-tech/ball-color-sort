@@ -1,0 +1,24 @@
+ball, tube
+red = r
+green = g
+blue = b
+
+bc = r, g, b
+tc = r, g, b
+
+r-8 x g-8 x b-8 = total - 24
+random total and divid by 3
+
+isPicked = true
+bcPicked = r, g, b
+
+if (isPicked)
+  drop into whatever tube is clicked
+  isPicked = false
+  bcPicked = null
+else
+  pull from whatever tube is clicked
+  isPicked = true
+  bcPicked = r, g, b
+
+
